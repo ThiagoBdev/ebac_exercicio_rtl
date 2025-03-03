@@ -2,6 +2,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import PostComment from '.';
 
 describe('Teste para o componente PostComment', () => {
+
+    test("Deve renderizar o Botão corretamente", () => {
+        render (<PostComment />)
+        expect(screen.getByTestId("btn-comentar")).toBeInTheDocument()
+    })
+
     test("teste para inserção de dois comentarios", () => {
         render (<PostComment />)
         fireEvent.change(screen.getByTestId("campo-comentario"), {
